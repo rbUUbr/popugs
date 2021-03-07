@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Task
+module Tasks
   class Delete
     def self.call(id:)
       task = Task.find_by(id: id)

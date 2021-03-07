@@ -16,7 +16,7 @@ class TasksController < ApplicationController
   def edit; end
 
   def create
-    task = Task::Create.call(name: task_params['name'])
+    task = Tasks::Create.call(name: task_params['name'])
     respond_to do |format|
       if task.errors.empty?
         format.html { redirect_to task, notice: 'Task was successfully created.' }
@@ -27,7 +27,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    task = Task::Update.call(id: params[:id], name: task_params['name'], status: task_params['status'])
+    task = Tasks::Update.call(id: params[:id], name: task_params['name'], status: task_params['status'])
     respond_to do |format|
       if task.errors.empty?
         format.html { redirect_to task, notice: 'Task was successfully updated.' }
@@ -39,7 +39,7 @@ class TasksController < ApplicationController
 
   # DELETE /tasks/1 or /tasks/1.json
   def destroy
-    Task::Delete.call(id: params[:id])
+    Tasks::Delete.call(id: params[:id])
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
     end

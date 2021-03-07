@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Task
+module Tasks
   class Update
     def self.call(id:, name:, status:)
       task = Task.find_by(id: id)

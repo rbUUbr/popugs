@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Task
+module Tasks
   class Create
     def self.call(name:)
       Task.create(name: name)
